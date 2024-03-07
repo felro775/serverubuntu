@@ -21,4 +21,5 @@ mysql -u root -p
 CREATE DATABASE tecadmin;
 CREATE USER 'tecadmin'@'localhost' IDENTIFIED BY 'E*t*c*d*i*$*5';
 GRANT ALL ON tecadmin.* TO 'tecadmin'@'localhost';
+
 FLUSH PRIVILEGES;

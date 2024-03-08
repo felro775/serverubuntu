@@ -22,4 +22,9 @@ CREATE DATABASE tecadmin;
 CREATE USER 'tecadmin'@'localhost' IDENTIFIED BY 'E*t*c*d*i*$*5';
 GRANT ALL ON tecadmin.* TO 'tecadmin'@'localhost';
 
+
+CREATE USER 'tecadmin'@'%' IDENTIFIED BY 'E*t*c*d*i*$*5';
+GRANT ALL ON tecadmin.* TO 'tecadmin'@'%';
+
+
 FLUSH PRIVILEGES;

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<table border="0">
+   <tr COLSPAN=2 BGCOLOR="#6D8FFF">
+      <td>ID</td>
+      <td>Nombre</td>
+      <td>Categoria</td>
+      <td>Serie</td>
+      <td>PJ</td>
+      <td>PG</td>
+      <td>PE</td>
+      <td>PP</td>
+   </tr>
+<?php
+$sql = "SELECT * FROM clubes WHERE serie_club='C'";
+$query = $conexion->prepare($sql);
+$query->execute();
+while($row = $query->fetch()){
+?>
+
+
+<tr>
+        <td><?php echo $row['id_club']?></td>
+        <td><?php echo $row['nombre_club']?></td>
+        <td><?php echo $row['categoria_club']?></td>
+        <td><?php echo $row['serie_club']?></td>
+        <td><?php echo $row['par_jugados_club']?></td>
+        <td><?php echo $row['par_ganados_club']?></td>
+        <td><?php echo $row['par_empatados_club']?></td>
+        <td><?php echo $row['par_perdidos_club']?></td>
+</tr>
+<?php
+$conexion = null;
+
+}
+?>
+</table>
+
+
+</body>
+</html>
+

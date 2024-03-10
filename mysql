@@ -9,12 +9,10 @@ exit
 
 
 sudo mysql_secure_installation
-Y
-2
+    Y
+    2
 
 mysql -u root -p
-
-
 
 /// USUARIO TECADMIN PARA PHPMYADMIN
 
@@ -22,9 +20,16 @@ CREATE DATABASE tecadmin;
 CREATE USER 'tecadmin'@'localhost' IDENTIFIED BY 'E*t*c*d*i*$*5';
 GRANT ALL ON tecadmin.* TO 'tecadmin'@'localhost';
 
-
 CREATE USER 'tecadmin'@'%' IDENTIFIED BY 'E*t*c*d*i*$*5';
 GRANT ALL ON tecadmin.* TO 'tecadmin'@'%';
 
-
 FLUSH PRIVILEGES;
+
+
+// PERMISO ACCESO REMOTO A LA BASE DE DATOS
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+    bind-address            = 0.0.0.0
+
+sudo systemctl restart mysql
+sudo systemctl restart mysql.service

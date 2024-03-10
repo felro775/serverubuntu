@@ -1,0 +1,16 @@
+<?php
+
+$servidor="34.30.123.144";
+$db="tecadmin";
+$username="tecadmin";
+$password="E*t*c*d*i*$*5";
+
+try{
+    $conexion=new PDO("mysql:host=$servidor;dbname=$db",$username,$password);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conexion Exitosa";
+}catch(Exception $e){
+    die("Error: " . $e->GetMessage());
+}
+
+?>

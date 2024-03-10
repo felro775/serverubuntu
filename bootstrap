@@ -1,0 +1,8 @@
+cd /home/felro775/
+
+wget https://github.com/startbootstrap/startbootstrap-sb-admin-2/archive/gh-pages.zip
+unzip gh-pages.zip
+cd startbootstrap-sb-admin-2-gh-pages/
+sudo cp *.* /var/www/html/liga
+sudo chown -R felro775:felro775 /var/www/html/liga/
+sudo chmod 777 /var/www/html/liga/

@@ -1,0 +1,23 @@
+python3 -V
+sudo apt install python3-pip
+sudo apt install python3-django
+sudo apt install python3-venv
+pip freeze
+pip3 list
+mkdir proyecto
+cd proyecto/
+
+django-admin --version
+django-admin startproject precipitacion
+python3 manage.py migrate
+python3 manage.py check
+
+sudo netstat -plnut
+sudo ufw allow 8000/tcp
+sudo service ufw restart
+
+cd precipitacion
+sudo nano settings.py
+  ALLOWE_HOSS =['IP_PULICA']
+  
+python3 manage.py runserver 0.0.0.0:8000

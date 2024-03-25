@@ -21,3 +21,42 @@ sudo nano settings.py
   ALLOWE_HOSS =['IP_PULICA']
   
 python3 manage.py runserver 0.0.0.0:8000
+
+pwd
+      /home/felro775/proyecto/precipitacion
+
+sudo nano precipitacion/urls.py
+    from django.contrib import admin
+    from django.urls import path
+    from precipitacion import views
+
+      urlpatterns = [
+         path('admin/', admin.site.urls),
+        path('', views.paginaweb),
+      ]
+
+sudo nano precipitacion/views.py
+      from django.http import HttpResponse
+      from django.shortcuts import render
+
+      def paginaweb(request):
+            return render(request,"index.html")
+
+sudo mkdir templates
+cd templates/
+sudo  nano templates/index.html                                      
+    <html>
+        <head>
+            <title> Web Precipitacion</title>
+        </head>
+        <body>
+            <div><h1>SERVIDOR LINUX VPS CON PHYTON</h1></div>
+            <h5>Hidrologia Aplicada 2024</h5>
+        </body>
+    </html>
+
+python3 manage.py runserver 0.0.0.0:8000
+
+
+
+

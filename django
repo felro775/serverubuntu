@@ -44,6 +44,7 @@ sudo nano precipitacion/views.py
 
 sudo mkdir templates
 cd templates/
+
 sudo  nano templates/index.html                                      
     <html>
         <head>
@@ -54,6 +55,17 @@ sudo  nano templates/index.html
             <h5>Hidrologia Aplicada 2024</h5>
         </body>
     </html>
+
+sudo nano precipitacion/settings.py
+      # SECURITY WARNING: don't run with debug turned on in production!
+      DEBUG = True
+      ALLOWED_HOSTS = ['*']
+
+      TEMPLATES = [
+      {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR, "templates"],
+
 
 python3 manage.py runserver 0.0.0.0:8000
 
